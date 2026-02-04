@@ -1,0 +1,31 @@
+# Generated data files
+data/
+*.parquet
+
+# Docker volumes
+airflow-logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Airflow
+airflow.db
+airflow.cfg
+logs/
