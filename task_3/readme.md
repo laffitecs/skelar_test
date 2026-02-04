@@ -9,6 +9,23 @@ Airflow DAG для збору історичних курсів валют з Op
 - Щоденне оновлення
 - Зберігає в партиціоновані PARQUET файли
 
+## Встановлення залежностей (опціонально)
+
+Якщо хочете запустити без Docker або розробляти локально:
+
+```bash
+# Створити віртуальне середовище
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# або
+venv\Scripts\activate     # Windows
+
+# Встановити залежності
+pip install -r requirements.txt
+```
+
+**Примітка:** При використанні Docker всі залежності встановлюються автоматично.
+
 ## Швидкий старт
 
 ### 1. Клонувати проект
@@ -95,13 +112,6 @@ df = pd.read_parquet('data/date=2025-07-01/exchange_rates.parquet')
 print(df.head())
 ```
 
-## Налаштування DAG
-
-У файлі `dags/currency_dag.py`:
-
-- `start_date` - початкова дата збору
-- `schedule_interval` - частота запуску (@daily, @hourly)
-- `catchup` - обробляти минулі дати (True/False)
 
 ## Обмеження API
 
